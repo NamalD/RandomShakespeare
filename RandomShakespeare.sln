@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespeareGenerator", "Par
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleDisplay", "ConsoleDisplay\ConsoleDisplay.csproj", "{C34F558D-639A-4003-A3B6-367CDA877307}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomShakespear.Web", "RandomShakespear.Web\RandomShakespear.Web.csproj", "{2CC8ED51-B3A9-489D-9B61-BE19455B49FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C34F558D-639A-4003-A3B6-367CDA877307}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C34F558D-639A-4003-A3B6-367CDA877307}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C34F558D-639A-4003-A3B6-367CDA877307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC8ED51-B3A9-489D-9B61-BE19455B49FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC8ED51-B3A9-489D-9B61-BE19455B49FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC8ED51-B3A9-489D-9B61-BE19455B49FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC8ED51-B3A9-489D-9B61-BE19455B49FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
