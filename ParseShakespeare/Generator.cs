@@ -12,8 +12,8 @@ namespace ShakespeareGenerator
         /// <summary>
         /// Generate a new poem from an existing body of text
         /// </summary>
-        /// <param name="corpus"></param>
-        /// <returns></returns>
+        /// <param name="corpus">Text to use as basis for new lines.</param>
+        /// <returns>New poem</returns>
         public IEnumerable<string> GeneratePoem(IEnumerable<string> corpus)
         {
             // Use Markov chains to generate new poems
@@ -26,7 +26,14 @@ namespace ShakespeareGenerator
                 chain.Add(words, 1);
             }
 
-            // Generate new lines
+            // Generate
+            var sentences = GeneratePoemLinesFromChain(chain);
+
+            return sentences;
+        }
+
+        private IEnumerable<string> GeneratePoemLinesFromChain(MarkovChain<string> chain)
+        {
             var rand = new Random();
             var sentences = new List<string>();
 
