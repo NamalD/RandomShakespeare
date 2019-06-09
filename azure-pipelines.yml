@@ -20,19 +20,30 @@ steps:
     command: 'restore'
     feedsToUse: 'select'
 
+# Build
 - task: MSBuild@1
   inputs:
     solution: '**/*.sln'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    msbuildArguments: '/t:pack' # Pack when building
 
+# Pack
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    configuration: '$(buildConfiguration)'
+    versioningScheme: byEnvVar
+    versionEnvVar: $(Build.BuildNumber)
+
+# Copy build artifacts to staging
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: '**/bin/$(buildConfiguration)/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
+# Push to nuget.org
 - task: NuGetCommand@2
   inputs:
     command: push
