@@ -34,7 +34,7 @@ steps:
     packagesToPack: '**/*.csproj'
     configuration: '$(buildConfiguration)'
     versioningScheme: byEnvVar
-    versionEnvVar: $(Build.BuildNumber)
+    versionEnvVar: Build.BuildNumber
 
 # Copy build artifacts to staging
 - task: CopyFiles@2
