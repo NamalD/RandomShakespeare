@@ -1,46 +1,35 @@
-﻿using System;
+﻿using Markov;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Markov;
 
 namespace ShakespeareGenerator
 {
     public class Generator
     {
         private const string _wordSplitPattern = @"(\w+['-]?\w*)|([;:,.!?\-])";
+        private readonly Random _random;
+        private readonly MarkovChain<string> _markovChain;
 
-        /// <summary>
-        /// Generate a new poem from an existing body of text
-        /// </summary>
-        /// <param name="corpus">Text to use as basis for new lines.</param>
-        /// <returns>New poem</returns>
-        public IEnumerable<string> GeneratePoem(IEnumerable<string> corpus)
+        public Generator(IEnumerable<string> corpus)
         {
-            // Use Markov chains to generate new poems
-            var chain = new MarkovChain<string>(3);
+            _random = new Random();
+            _markovChain = new MarkovChain<string>(3);
 
-            // Add split words from corpus to chain
             foreach (var line in corpus)
             {
                 var words = SplitLineToWords(line);
-                chain.Add(words, 1);
+                _markovChain.Add(words, 1);
             }
-
-            // Generate
-            var sentences = GeneratePoemLinesFromChain(chain);
-
-            return sentences;
         }
 
-        private IEnumerable<string> GeneratePoemLinesFromChain(MarkovChain<string> chain)
+        public IEnumerable<string> NextLines(int lineCount)
         {
-            var rand = new Random();
             var sentences = new List<string>();
-
-            for (var i = 0; i < 10; i++)
+            for (var i = 0; i < lineCount; i++)
             {
                 // Get a random-walk chain and turn into a valid sentence
-                var wordChain = chain.Chain(rand);
+                var wordChain = _markovChain.Chain(_random);
                 var sentence = ChainToSentence(wordChain);
 
                 // Ensure first sentence does not start with conjunction
@@ -71,6 +60,16 @@ namespace ShakespeareGenerator
             }
 
             return sentences;
+        }
+
+        public IEnumerable<string> NextSonnet()
+        {
+            return NextLines(14);
+        }
+
+        public IEnumerable<string> NextVerse()
+        {
+            return NextLines(7);
         }
 
         private string ChainToSentence(IEnumerable<string> wordChain)
