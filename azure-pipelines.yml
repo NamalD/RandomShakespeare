@@ -24,7 +24,7 @@ steps:
   inputs:
     solution: '**/*.sln'
     platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration'
+    configuration: '$(buildConfiguration)'
     msbuildArguments: '/t:pack' # Pack when building
 
 - task: NuGetCommand@2
