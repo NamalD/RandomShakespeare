@@ -3,6 +3,9 @@ name: $(majorMinorVersion).$(semanticVersion)
 trigger:
 - master
 
+# Do not build pull requests
+pr: none
+
 pool:
   vmImage: 'windows-latest'
 
