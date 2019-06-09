@@ -27,7 +27,7 @@ namespace ShakespeareGenerator
         public async Task<IEnumerable<string>> GetPoemsAsync()
         {
             // Download poems if they do not exist
-            var poemsDownloaded = Directory.GetFiles(DownloadPath, "*.html").Count() > 0;
+            var poemsDownloaded = Directory.Exists(DownloadPath) && Directory.GetFiles(DownloadPath, "*.html").Count() > 0;
             if (!poemsDownloaded)
             {
                 await DownloadPoemsAsync();
