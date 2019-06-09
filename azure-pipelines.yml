@@ -24,15 +24,8 @@ steps:
   inputs:
     solution: '**/*.sln'
     platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: NuGetCommand@2
-  inputs:
-    command: 'pack'
-    packagesToPack: '**/*.csproj'
-    configuration: '$(buildConfiguration)'
-    versioningScheme: byEnvVar
-    versionEnvVar: Build.BuildNumber
+    configuration: '$(buildConfiguration'
+    msbuildArguments: '/t:pack' # Pack when building
 
 - task: NuGetCommand@2
   inputs:
