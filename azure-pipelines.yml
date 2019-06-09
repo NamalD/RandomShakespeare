@@ -27,6 +27,12 @@ steps:
     configuration: '$(buildConfiguration)'
     msbuildArguments: '/t:pack' # Pack when building
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '**/bin/$(buildConfiguration)/**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
 - task: NuGetCommand@2
   inputs:
     command: push
