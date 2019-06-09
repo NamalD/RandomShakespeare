@@ -32,7 +32,7 @@ steps:
     packagesToPack: '**/*.csproj'
     configuration: '$(buildConfiguration)'
     versioningScheme: byEnvVar
-    versionEnvVar: $(Build.BuildNumber)
+    versionEnvVar: Build.BuildNumber
 
 - task: NuGetCommand@2
   inputs:
