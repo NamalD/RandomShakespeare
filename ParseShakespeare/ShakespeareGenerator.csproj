@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/NamalD/RandomShakespeare</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NamalD/RandomShakespeare</RepositoryUrl>
+    <Authors>Namal Dayarathna</Authors>
+    <Company />
+    <Description>Generate random Shakespeare works from an existing corpus</Description>
+    <Copyright>Copyright 2019</Copyright>
+    <PackageTags>Shakespeare Markov Chain Generative Poetry</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

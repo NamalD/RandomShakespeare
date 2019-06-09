@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakespeareGenerator", "ParseShakespeare\ShakespeareGenerator.csproj", "{ADD0D4A0-53F7-409A-B860-2B094B7AAE23}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleDisplay", "ConsoleDisplay\ConsoleDisplay.csproj", "{C34F558D-639A-4003-A3B6-367CDA877307}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{ADD0D4A0-53F7-409A-B860-2B094B7AAE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADD0D4A0-53F7-409A-B860-2B094B7AAE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADD0D4A0-53F7-409A-B860-2B094B7AAE23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C34F558D-639A-4003-A3B6-367CDA877307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C34F558D-639A-4003-A3B6-367CDA877307}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C34F558D-639A-4003-A3B6-367CDA877307}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C34F558D-639A-4003-A3B6-367CDA877307}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
