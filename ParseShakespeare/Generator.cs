@@ -1,7 +1,7 @@
-﻿using Markov;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Markov;
 
 namespace ShakespeareGenerator
 {
@@ -40,7 +40,7 @@ namespace ShakespeareGenerator
                 }
 
                 // Ensure last sentence ends with full stop
-                if (i == 9 && !sentence.EndsWith('.'))
+                if (i == 9 && !sentence.EndsWith("."))
                 {
                     // If last character is a punctuation mark, convert to full stop, append otherwise
                     var lastIndex = sentence.Length - 1;
