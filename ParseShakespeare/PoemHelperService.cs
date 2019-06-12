@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShakespeareGenerator
 {
-    public static class PoemGeneration
+    public static class PoemHelperService
     {
         /// <summary>
         /// Generates A shakespeare poem that will fill your heart
